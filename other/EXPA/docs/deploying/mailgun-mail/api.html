@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mailgun API | Expa</title>
+    <meta name="description" content="Experience from IT world">
+    
+    
+    <link rel="preload" href="/EXPA/assets/css/0.styles.709becf5.css" as="style"><link rel="preload" href="/EXPA/assets/js/app.7eee4e4c.js" as="script"><link rel="preload" href="/EXPA/assets/js/2.317db98f.js" as="script"><link rel="preload" href="/EXPA/assets/js/25.a2c90b3c.js" as="script"><link rel="prefetch" href="/EXPA/assets/js/10.9da9f8a7.js"><link rel="prefetch" href="/EXPA/assets/js/11.0c7ee5a2.js"><link rel="prefetch" href="/EXPA/assets/js/12.356a1f28.js"><link rel="prefetch" href="/EXPA/assets/js/13.df66b347.js"><link rel="prefetch" href="/EXPA/assets/js/14.92fbbd77.js"><link rel="prefetch" href="/EXPA/assets/js/15.e73630d5.js"><link rel="prefetch" href="/EXPA/assets/js/16.85774391.js"><link rel="prefetch" href="/EXPA/assets/js/17.08e7b2d4.js"><link rel="prefetch" href="/EXPA/assets/js/18.fc9ef6b9.js"><link rel="prefetch" href="/EXPA/assets/js/19.20e857ce.js"><link rel="prefetch" href="/EXPA/assets/js/20.ad1b1d8e.js"><link rel="prefetch" href="/EXPA/assets/js/21.86b78459.js"><link rel="prefetch" href="/EXPA/assets/js/22.8df9c093.js"><link rel="prefetch" href="/EXPA/assets/js/23.da705e82.js"><link rel="prefetch" href="/EXPA/assets/js/24.2c4b5efc.js"><link rel="prefetch" href="/EXPA/assets/js/26.9a34ee2a.js"><link rel="prefetch" href="/EXPA/assets/js/27.b9447ffe.js"><link rel="prefetch" href="/EXPA/assets/js/28.8e35e09a.js"><link rel="prefetch" href="/EXPA/assets/js/29.af2a041f.js"><link rel="prefetch" href="/EXPA/assets/js/3.a83a8d27.js"><link rel="prefetch" href="/EXPA/assets/js/30.aa8ce7bc.js"><link rel="prefetch" href="/EXPA/assets/js/31.296b4ed5.js"><link rel="prefetch" href="/EXPA/assets/js/32.ae1650b2.js"><link rel="prefetch" href="/EXPA/assets/js/33.7533b563.js"><link rel="prefetch" href="/EXPA/assets/js/34.f28e22ab.js"><link rel="prefetch" href="/EXPA/assets/js/35.15be7ac8.js"><link rel="prefetch" href="/EXPA/assets/js/36.71d0bc1a.js"><link rel="prefetch" href="/EXPA/assets/js/37.41cca8b3.js"><link rel="prefetch" href="/EXPA/assets/js/38.96e4ecba.js"><link rel="prefetch" href="/EXPA/assets/js/39.7c594ea3.js"><link rel="prefetch" href="/EXPA/assets/js/4.61117d12.js"><link rel="prefetch" href="/EXPA/assets/js/40.c8e86655.js"><link rel="prefetch" href="/EXPA/assets/js/41.ea140a34.js"><link rel="prefetch" href="/EXPA/assets/js/42.528f028f.js"><link rel="prefetch" href="/EXPA/assets/js/43.c43045d3.js"><link rel="prefetch" href="/EXPA/assets/js/44.4a8ba6a9.js"><link rel="prefetch" href="/EXPA/assets/js/45.c82b3814.js"><link rel="prefetch" href="/EXPA/assets/js/46.b50efebc.js"><link rel="prefetch" href="/EXPA/assets/js/47.d6395077.js"><link rel="prefetch" href="/EXPA/assets/js/48.15305148.js"><link rel="prefetch" href="/EXPA/assets/js/49.0c7c4db1.js"><link rel="prefetch" href="/EXPA/assets/js/5.e6cb8e23.js"><link rel="prefetch" href="/EXPA/assets/js/50.f4e567a6.js"><link rel="prefetch" href="/EXPA/assets/js/51.d0dbde97.js"><link rel="prefetch" href="/EXPA/assets/js/52.fc3393c8.js"><link rel="prefetch" href="/EXPA/assets/js/53.a287492b.js"><link rel="prefetch" href="/EXPA/assets/js/54.f498ac58.js"><link rel="prefetch" href="/EXPA/assets/js/55.9a0177cc.js"><link rel="prefetch" href="/EXPA/assets/js/56.278921a4.js"><link rel="prefetch" href="/EXPA/assets/js/57.de00d368.js"><link rel="prefetch" href="/EXPA/assets/js/58.a552187f.js"><link rel="prefetch" href="/EXPA/assets/js/59.554145fb.js"><link rel="prefetch" href="/EXPA/assets/js/6.1d8700dc.js"><link rel="prefetch" href="/EXPA/assets/js/60.076507eb.js"><link rel="prefetch" href="/EXPA/assets/js/61.18fe319b.js"><link rel="prefetch" href="/EXPA/assets/js/7.c9149c7d.js"><link rel="prefetch" href="/EXPA/assets/js/8.7127fd9e.js"><link rel="prefetch" href="/EXPA/assets/js/9.3d5c01a2.js">
+    <link rel="stylesheet" href="/EXPA/assets/css/0.styles.709becf5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/EXPA/" class="home-link router-link-active"><!----> <span class="site-name">Expa</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/EXPA/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://github.com/Nikeweke/EXPA/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  To repository
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/EXPA/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://github.com/Nikeweke/EXPA/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  To repository
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Basic</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Frontend</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Tools</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mobile development</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Deploying</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/EXPA/deploying/heroku.html" class="sidebar-link">Heroku</a></li><li><a href="/EXPA/deploying/unix.html" class="sidebar-link">Unix</a></li><li><a href="/EXPA/deploying/vps.html" class="sidebar-link">VPS</a></li><li><a href="/EXPA/deploying/namecheap-domain-to-vps.html" class="sidebar-link">NameCheap - domain names provider</a></li><li><a href="/EXPA/deploying/mailgun-mail/intro.html" class="sidebar-link">Mailgun - mail service</a></li><li><a href="/EXPA/deploying/mailgun-mail/api.html" class="active sidebar-link">Mailgun API</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/EXPA/deploying/mailgun-mail/smtp.html" class="sidebar-link">Mailgun SMTP</a></li><li><a href="/EXPA/deploying/docker.html" class="sidebar-link">Docker</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Authentications</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Tests and CI/CD</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Clouds</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Problems and Solutions</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mailgun-api"><a href="#mailgun-api" aria-hidden="true" class="header-anchor">#</a> Mailgun API</h1> <p>Api is faster than SMTP and easy to use</p> <h3 id="example-from-php-laravel"><a href="#example-from-php-laravel" aria-hidden="true" class="header-anchor">#</a> Example from php(Laravel)</h3> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">/*
+   Для работы с &quot;Mailgun&quot; нужно установить: 
+   // SDK mailgun &amp; adapter guzzle
+   composer require mailgun/mailgun-php
+   composer require php-http/guzzle6-adapter
+*/</span>
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Support</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Mailgun<span class="token punctuation">\</span>Mailgun</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MailSupport</span>
+<span class="token punctuation">{</span>
+
+     <span class="token comment">// sandbox</span>
+    <span class="token comment">// private $api_key     = 'key-XXXXXXXXXXXXXXXXXXXXXXXXXX';</span>
+    <span class="token comment">// private $domain_name = 'sandboxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';</span>
+
+    <span class="token comment">// mail.foodcontrol.club</span>
+    <span class="token keyword">private</span> <span class="token variable">$api_key</span>     <span class="token operator">=</span> <span class="token single-quoted-string string">'key-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token variable">$domain_name</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'mail.foodcontrol.club'</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token variable">$from</span>        <span class="token operator">=</span> <span class="token single-quoted-string string">'foodcontrol@club.mail'</span><span class="token punctuation">;</span>
+
+
+    <span class="token comment">/*******************************************************
+    *    Забрать все письма (Log)
+    *
+    *******************************************************/</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">getLogs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+      <span class="token shell-comment comment"># Instantiate the client.</span>
+       <span class="token variable">$mgClient</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mailgun</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">api_key</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token variable">$domain</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">domain_name</span><span class="token punctuation">;</span>
+
+       <span class="token comment">// Get logs of sending</span>
+       <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$mgClient</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token double-quoted-string string">&quot;<span class="token interpolation"><span class="token variable">$domain</span></span>/log&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">dd</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+
+    <span class="token comment">/*******************************************************
+    *    Выслать письмо
+    *
+    *******************************************************/</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">sendMail</span><span class="token punctuation">(</span><span class="token variable">$to</span><span class="token punctuation">,</span> <span class="token variable">$subject</span><span class="token punctuation">,</span> <span class="token variable">$type</span><span class="token punctuation">,</span> <span class="token keyword">array</span> <span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token variable">$html</span> <span class="token operator">=</span> <span class="token boolean constant">false</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+       <span class="token comment">// провереям какое письмо(содержимое для пиьсма) нам взять</span>
+       <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$html</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$type</span> <span class="token operator">==</span> <span class="token single-quoted-string string">'reset_password'</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token variable">$html</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">ResetPasswordMail</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'new_pwd'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+       <span class="token punctuation">}</span>
+
+       <span class="token shell-comment comment"># Instantiate the client.</span>
+        <span class="token variable">$mgClient</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mailgun</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">api_key</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$domain</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">domain_name</span><span class="token punctuation">;</span>
+
+        <span class="token shell-comment comment"># Выслать сообщение</span>
+        <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$mgClient</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">sendMessage</span><span class="token punctuation">(</span><span class="token variable">$domain</span><span class="token punctuation">,</span>
+            <span class="token punctuation">[</span>
+               <span class="token single-quoted-string string">'from'</span>    <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">from</span><span class="token punctuation">,</span>
+               <span class="token single-quoted-string string">'to'</span>      <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$to</span><span class="token punctuation">,</span>
+              <span class="token comment">//  'cc'      =&gt; 'baz@example.com',</span>
+              <span class="token comment">//  'bcc'     =&gt; 'bar@example.com',</span>
+               <span class="token single-quoted-string string">'subject'</span> <span class="token operator">=</span><span class="token operator">&gt;</span>  <span class="token variable">$subject</span><span class="token punctuation">,</span>
+               <span class="token single-quoted-string string">'html'</span>    <span class="token operator">=</span><span class="token operator">&gt;</span>  <span class="token variable">$html</span>
+            <span class="token punctuation">]</span>
+
+            <span class="token comment">// [</span>
+            <span class="token comment">//    'attachment' =&gt; array('/path/to/file.txt', '/path/to/file.txt')</span>
+            <span class="token comment">// ]</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// $result-&gt;http_response_body-&gt;message;</span>
+        <span class="token comment">// $result-&gt;http_response_body-&gt;id;</span>
+
+        <span class="token keyword">return</span>  <span class="token variable">$result</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">http_response_code</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+
+    <span class="token comment">/*******************************************************
+    *    Письмо для сброса пароля
+    *
+    *******************************************************/</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">ResetPasswordMail</span><span class="token punctuation">(</span><span class="token variable">$new_password</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token single-quoted-string string">'
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang=&quot;en&quot;&gt;
+              &lt;head&gt;
+                &lt;meta charset=&quot;utf-8&quot;&gt;
+                &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+                &lt;title&gt;Новый пароль&lt;/title&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+
+                &lt;div &gt;
+                   &lt;h2&gt;Здравствуйте!&lt;/h2&gt;
+                   &lt;p&gt;Ваш пароль был сброшен!&lt;/p&gt;
+                   &lt;p&gt;Вы сможете изменить пароль в разделе &lt;a href=&quot;'</span><span class="token punctuation">.</span> <span class="token function">route</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'settings.app'</span><span class="token punctuation">)</span> <span class="token punctuation">.</span><span class="token single-quoted-string string">'&quot;&gt;&quot;Настройки&quot;&lt;/a&gt;&lt;/p&gt;
+                   &lt;p&gt;Новый пароль:&lt;/p&gt;
+                    &lt;h2&gt;&lt;strong&gt;'</span><span class="token punctuation">.</span> <span class="token variable">$new_password</span> <span class="token punctuation">.</span><span class="token single-quoted-string string">'&lt;/strong&gt;&lt;h2&gt;&lt;/p&gt;&lt;br&gt;
+                &lt;/div&gt;
+
+                 &lt;h4 style=&quot;color:rgb(159, 159, 159)&quot;&gt;FoodControl Team&lt;/h4&gt;
+              &lt;/body&gt;
+            &lt;/html&gt;
+        '</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</span></code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/EXPA/deploying/mailgun-mail/intro.html" class="prev">
+          Mailgun - mail service
+        </a></span> <span class="next"><a href="/EXPA/deploying/mailgun-mail/smtp.html">
+          Mailgun SMTP
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/EXPA/assets/js/app.7eee4e4c.js" defer></script><script src="/EXPA/assets/js/2.317db98f.js" defer></script><script src="/EXPA/assets/js/25.a2c90b3c.js" defer></script>
+  </body>
+</html>

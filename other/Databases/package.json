@@ -1,0 +1,27 @@
+{
+  "name": "5b7992b78a6e3600312604fb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vuepress dev src",
+    "docs:push": "cd src && vuepress build && git add -A && git commit -m \"new\" && git push origin master ",
+    "push": "git add -A && git commit -m \"new\" && git push origin master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikeweke/EXPA--Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikeweke/EXPA--Backend/issues"
+  },
+  "homepage": "https://github.com/Nikeweke/EXPA--Backend#readme",
+  "devDependencies": {
+    "vuepress": "^1.7.1"
+  }
+}
