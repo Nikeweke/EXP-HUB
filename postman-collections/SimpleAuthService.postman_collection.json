@@ -1,0 +1,970 @@
+{
+	"info": {
+		"_postman_id": "b574d5e7-70e1-4ed9-bc9f-a8f29cb1292e",
+		"name": "SimpleAuthService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "only-admin",
+			"item": [
+				{
+					"name": "Invite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sas_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"yofixi6625@bomoads1.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sas_api}}/invite",
+							"host": [
+								"{{sas_api}}"
+							],
+							"path": [
+								"invite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log of activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sas_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sas_api}}/admin/audit",
+							"host": [
+								"{{sas_api}}"
+							],
+							"path": [
+								"admin",
+								"audit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sas_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sas_api}}/admin/is-valid",
+							"host": [
+								"{{sas_api}}"
+							],
+							"path": [
+								"admin",
+								"is-valid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sas_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sas_api}}/admin/users",
+							"host": [
+								"{{sas_api}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sas_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sas_api}}/admin/users/88eed367-30a6-4156-9ce5-65b56a800b74",
+							"host": [
+								"{{sas_api}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"88eed367-30a6-4156-9ce5-65b56a800b74"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sas_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"yofixi6625@bomoads1.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sas_api}}/admin/users/{{sas_user_id}}/disable",
+							"host": [
+								"{{sas_api}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"{{sas_user_id}}",
+								"disable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sas_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"yofixi6625@bomoads1.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sas_api}}/admin/users/88eed367-30a6-4156-9ce5-65b56a800b74",
+							"host": [
+								"{{sas_api}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"88eed367-30a6-4156-9ce5-65b56a800b74"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sas_api}}/health",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Health",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:15:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"description\": \"SAS is a user registration and authentication API\",\n    \"name\": \"SAS\",\n    \"version\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sas_api}}/settings",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"settings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Settings",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/settings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:15:48 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"external\": {\n        \"bitbucket\": false,\n        \"github\": false,\n        \"gitlab\": false,\n        \"google\": false,\n        \"facebook\": false,\n        \"email\": true,\n        \"saml\": false\n    },\n    \"external_labels\": {},\n    \"disable_signup\": false,\n    \"autoconfirm\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{sas_jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sas_api}}/user",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:22:03 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "332"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4104c589-3d33-478b-a27c-71b78f034ed9\",\n    \"aud\": \"test.com\",\n    \"role\": \"\",\n    \"email\": \"poyega7159@kyrescu.com\",\n    \"confirmed_at\": \"2021-11-20T13:16:36Z\",\n    \"recovery_sent_at\": \"2021-11-20T13:20:39Z\",\n    \"app_metadata\": {\n        \"provider\": \"email\"\n    },\n    \"user_metadata\": {},\n    \"is_disabled\": false,\n    \"created_at\": \"2021-11-20T13:16:36Z\",\n    \"updated_at\": \"2021-11-20T13:16:36Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"{{sas_email}}\",\r\n  \"password\": \"{{sas_password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sas_api}}/signup",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"poyega7159@kyrescu.com\",\r\n  \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:16:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4104c589-3d33-478b-a27c-71b78f034ed9\",\n    \"aud\": \"api.netlify.com\",\n    \"role\": \"\",\n    \"email\": \"poyega7159@kyrescu.com\",\n    \"confirmed_at\": \"2021-11-20T15:16:36.3545517+02:00\",\n    \"app_metadata\": {\n        \"provider\": \"email\"\n    },\n    \"user_metadata\": null,\n    \"is_disabled\": false,\n    \"created_at\": \"2021-11-20T15:16:36.35155+02:00\",\n    \"updated_at\": \"2021-11-20T15:16:36.354551+02:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{sas_api}}/token?grant_type=password&username={{sas_email}}&password={{sas_password}}",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "{{sas_email}}"
+						},
+						{
+							"key": "password",
+							"value": "{{sas_password}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/token?grant_type=password&username={{sas_email}}&password={{sas_password}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "password"
+								},
+								{
+									"key": "username",
+									"value": "{{sas_email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{sas_password}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:18:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "405"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0ZXN0LmNvbSIsImV4cCI6MTYzNzQxNzkxNSwic3ViIjoiNDEwNGM1ODktM2QzMy00NzhiLWEyN2MtNzFiNzhmMDM0ZWQ5IiwiZW1haWwiOiJwb3llZ2E3MTU5QGt5cmVzY3UuY29tIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwifSwidXNlcl9tZXRhZGF0YSI6e319.KOAi5q_GJfMbTk0-oIUAr2c6gmlbwcsKhbdqvhvHp00\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600,\n    \"refresh_token\": \"lzqL26akYgerxM5Gku4DYA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{sas_api}}/token?grant_type=refresh_token&refresh_token=",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						},
+						{
+							"key": "refresh_token",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/token?grant_type=password&username={{sas_email}}&password={{sas_password}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "password"
+								},
+								{
+									"key": "username",
+									"value": "{{sas_email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{sas_password}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:18:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "405"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0ZXN0LmNvbSIsImV4cCI6MTYzNzQxNzkxNSwic3ViIjoiNDEwNGM1ODktM2QzMy00NzhiLWEyN2MtNzFiNzhmMDM0ZWQ5IiwiZW1haWwiOiJwb3llZ2E3MTU5QGt5cmVzY3UuY29tIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwifSwidXNlcl9tZXRhZGF0YSI6e319.KOAi5q_GJfMbTk0-oIUAr2c6gmlbwcsKhbdqvhvHp00\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600,\n    \"refresh_token\": \"lzqL26akYgerxM5Gku4DYA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Token for admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{sas_api}}/token?grant_type=password&username=exo@ex.com&password=1234",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "exo@ex.com"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/token?grant_type=password&username={{sas_email}}&password={{sas_password}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "password"
+								},
+								{
+									"key": "username",
+									"value": "{{sas_email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{sas_password}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:18:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "405"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0ZXN0LmNvbSIsImV4cCI6MTYzNzQxNzkxNSwic3ViIjoiNDEwNGM1ODktM2QzMy00NzhiLWEyN2MtNzFiNzhmMDM0ZWQ5IiwiZW1haWwiOiJwb3llZ2E3MTU5QGt5cmVzY3UuY29tIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwifSwidXNlcl9tZXRhZGF0YSI6e319.KOAi5q_GJfMbTk0-oIUAr2c6gmlbwcsKhbdqvhvHp00\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600,\n    \"refresh_token\": \"lzqL26akYgerxM5Gku4DYA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Recover",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"email\": \"{{sas_email}}\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sas_api}}/recover",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"recover"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Recover",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"email\": \"{{sas_email}}\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/recover",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recover"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:20:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						}
+					],
+					"cookie": [],
+					"body": "{}"
+				}
+			]
+		},
+		{
+			"name": "Verify - signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"type\": \"signup\",\r\n    \"token\": \"HEkZWArMTkDtOIXufR91wQ\",\r\n    \"password\": \"222\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sas_api}}/verify",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify - recovery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"type\": \"recovery\",\r\n    \"token\": \"3wi9ogfsXaUpHp00yKIKsg\",\r\n    \"password\": \"12345\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sas_api}}/verify",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"verify"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Verify - recovery",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"type\": \"recovery\",\r\n    \"token\": \"3wi9ogfsXaUpHp00yKIKsg\",\r\n    \"password\": \"12345\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"verify"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Nov 2021 13:21:21 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "405"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0ZXN0LmNvbSIsImV4cCI6MTYzNzQxODA4MSwic3ViIjoiNDEwNGM1ODktM2QzMy00NzhiLWEyN2MtNzFiNzhmMDM0ZWQ5IiwiZW1haWwiOiJwb3llZ2E3MTU5QGt5cmVzY3UuY29tIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwifSwidXNlcl9tZXRhZGF0YSI6e319.ezuVpo2rJgdckiHAXeEEOrmVSrq40btWT_NDUE8WCuI\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600,\n    \"refresh_token\": \"pN7Av3XCDKMaILl-qqL2Pg\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{sas_jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{sas_api}}/logout",
+					"host": [
+						"{{sas_api}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

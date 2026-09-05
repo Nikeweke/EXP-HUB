@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "5362d6ea-288b-4646-9260-76835052febd",
+		"name": "Binance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get crypto sell and buy price",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{supertax_jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"channels\": [\r\n    \"p2p\",\r\n    \"wallet\",\r\n    \"card\"\r\n  ],\r\n  \"fiat\": \"UAH\",\r\n  \"transactionType\": \"sell\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.binance.com/bapi/fiat/v2/friendly/ocbs/buy/list-crypto",
+					"protocol": "https",
+					"host": [
+						"www",
+						"binance",
+						"com"
+					],
+					"path": [
+						"bapi",
+						"fiat",
+						"v2",
+						"friendly",
+						"ocbs",
+						"buy",
+						"list-crypto"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Latest data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/user/latest-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"latest-data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jan 2022 16:36:54 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "130"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"quarterSummary\": {\n        \"taxSum\": 0,\n        \"esv\": 0,\n        \"incomeTax\": 0,\n        \"income\": 0,\n        \"year\": 0,\n        \"quarter\": 0,\n        \"taxReportPeriod\": \"\"\n    },\n    \"taxEvents\": {\n        \"data\": {},\n        \"keys\": []\n    }\n}"
+				},
+				{
+					"name": "Tax events",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/user/tax-events?year=2021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"tax-events"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2021"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Dec 2021 08:29:48 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "446"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"1\": [\n            {\n                \"id\": 380,\n                \"type\": \"esv_payment\",\n                \"amount\": 3960,\n                \"description\": \"ЕСВ платёж\",\n                \"year\": 2021,\n                \"quarter\": 1,\n                \"deadlineAt\": 1618866000,\n                \"startAt\": 1617224400,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 379,\n                \"type\": \"en_payment\",\n                \"amount\": 5,\n                \"description\": \"ЕН платёж\",\n                \"year\": 2021,\n                \"quarter\": 1,\n                \"deadlineAt\": 1621544400,\n                \"startAt\": 1617224400,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 378,\n                \"type\": \"tax_report\",\n                \"amount\": 0,\n                \"description\": \"Налоговый отчет\",\n                \"year\": 2021,\n                \"quarter\": 1,\n                \"deadlineAt\": 1620680400,\n                \"startAt\": 1617224400,\n                \"userId\": 0,\n                \"doneAt\": 0\n            }\n        ],\n        \"2\": [\n            {\n                \"id\": 383,\n                \"type\": \"esv_payment\",\n                \"amount\": 3960,\n                \"description\": \"ЕСВ платёж\",\n                \"year\": 2021,\n                \"quarter\": 2,\n                \"deadlineAt\": 1626728400,\n                \"startAt\": 1625086800,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 382,\n                \"type\": \"en_payment\",\n                \"amount\": 5,\n                \"description\": \"ЕН платёж\",\n                \"year\": 2021,\n                \"quarter\": 2,\n                \"deadlineAt\": 1629406800,\n                \"startAt\": 1625086800,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 381,\n                \"type\": \"tax_report\",\n                \"amount\": 0,\n                \"description\": \"Налоговый отчет\",\n                \"year\": 2021,\n                \"quarter\": 2,\n                \"deadlineAt\": 1628542800,\n                \"startAt\": 1625086800,\n                \"userId\": 0,\n                \"doneAt\": 0\n            }\n        ],\n        \"3\": [\n            {\n                \"id\": 386,\n                \"type\": \"esv_payment\",\n                \"amount\": 3960,\n                \"description\": \"ЕСВ платёж\",\n                \"year\": 2021,\n                \"quarter\": 3,\n                \"deadlineAt\": 1634677200,\n                \"startAt\": 1633035600,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 385,\n                \"type\": \"en_payment\",\n                \"amount\": 5,\n                \"description\": \"ЕН платёж\",\n                \"year\": 2021,\n                \"quarter\": 3,\n                \"deadlineAt\": 1637359200,\n                \"startAt\": 1633035600,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 384,\n                \"type\": \"tax_report\",\n                \"amount\": 0,\n                \"description\": \"Налоговый отчет\",\n                \"year\": 2021,\n                \"quarter\": 3,\n                \"deadlineAt\": 1636495200,\n                \"startAt\": 1633035600,\n                \"userId\": 0,\n                \"doneAt\": 0\n            }\n        ],\n        \"4\": [\n            {\n                \"id\": 390,\n                \"type\": \"esv_year_report\",\n                \"amount\": 0,\n                \"description\": \"Отчет по ЕСВ\",\n                \"year\": 2021,\n                \"quarter\": 4,\n                \"deadlineAt\": 1644444000,\n                \"startAt\": 1640988000,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 389,\n                \"type\": \"esv_payment\",\n                \"amount\": 4070,\n                \"description\": \"ЕСВ платёж\",\n                \"year\": 2021,\n                \"quarter\": 4,\n                \"deadlineAt\": 1642629600,\n                \"startAt\": 1640988000,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 388,\n                \"type\": \"en_payment\",\n                \"amount\": 5,\n                \"description\": \"ЕН платёж\",\n                \"year\": 2021,\n                \"quarter\": 4,\n                \"deadlineAt\": 1645308000,\n                \"startAt\": 1640988000,\n                \"userId\": 0,\n                \"doneAt\": 0\n            },\n            {\n                \"id\": 387,\n                \"type\": \"tax_report\",\n                \"amount\": 0,\n                \"description\": \"Налоговый отчет\",\n                \"year\": 2021,\n                \"quarter\": 4,\n                \"deadlineAt\": 1644444000,\n                \"startAt\": 1640988000,\n                \"userId\": 0,\n                \"doneAt\": 0\n            }\n        ]\n    },\n    \"keys\": [\n        4,\n        3,\n        2,\n        1\n    ]\n}"
+				},
+				{
+					"name": "Index",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Nov 2021 07:40:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "212"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"supported_currencies\": [\n        {\n            \"text\": \"uah\",\n            \"value\": \"uah\"\n        },\n        {\n            \"text\": \"usd\",\n            \"value\": \"usd\"\n        },\n        {\n            \"text\": \"eur\",\n            \"value\": \"eur\"\n        },\n        {\n            \"text\": \"rub\",\n            \"value\": \"rub\"\n        }\n    ],\n    \"tax_data\": {\n        \"day\": 11,\n        \"esv\": 3960,\n        \"month\": 11,\n        \"period\": \"Окт-Дек\",\n        \"quarter\": 4,\n        \"year\": 2021\n    },\n    \"transaction_types\": [\n        {\n            \"text\": \"Доход\",\n            \"value\": \"income\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Wallet status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.binance.com/sapi/v1/system/status",
+					"protocol": "https",
+					"host": [
+						"api",
+						"binance",
+						"com"
+					],
+					"path": [
+						"sapi",
+						"v1",
+						"system",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All coins info",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "X-MBX-APIKEY",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "zrwlXgHuX49MRLwKuuYreW1YB8mX55ygkz4ZsZwzs40WVBdnUz5hGK6BhctzvLyv",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.binance.com/sapi/v1/capital/config/getall",
+					"protocol": "https",
+					"host": [
+						"api",
+						"binance",
+						"com"
+					],
+					"path": [
+						"sapi",
+						"v1",
+						"capital",
+						"config",
+						"getall"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "{{$timestamp}}",
+							"disabled": true
+						},
+						{
+							"key": "signature",
+							"value": "123",
+							"disabled": true
+						},
+						{
+							"key": "recvWindow",
+							"value": "5000",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ticker",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.binance.com/api/v3/ticker/price?symbol=BUSDUAH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"binance",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"ticker",
+						"price"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "{{$timestamp}}",
+							"disabled": true
+						},
+						{
+							"key": "signature",
+							"value": "123",
+							"disabled": true
+						},
+						{
+							"key": "recvWindow",
+							"value": "5000",
+							"disabled": true
+						},
+						{
+							"key": "symbol",
+							"value": "USTBUSD",
+							"disabled": true
+						},
+						{
+							"key": "symbol",
+							"value": "BUSDUAH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ticker 24h",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.binance.com/api/v3/ticker/24hr?symbol=USTBUSD",
+					"protocol": "https",
+					"host": [
+						"api",
+						"binance",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"ticker",
+						"24hr"
+					],
+					"query": [
+						{
+							"key": "symbol",
+							"value": "USTBUSD"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

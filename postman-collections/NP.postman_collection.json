@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "8e43d84f-3dd9-4cbf-bf3c-f78396661589",
+		"name": "NP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calculate delivery cost",
+			"item": [
+				{
+					"name": "Calculate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"modelName\": \"InternetDocument\",\r\n   \"calledMethod\": \"getDocumentPrice\",\r\n   \"methodProperties\": {\r\n      \"CitySender\": \"0dc42d14-4b3a-11e4-ab6d-005056801329\",\r\n      \"CityRecipient\": \"e718a680-4b33-11e4-ab6d-005056801329\",\r\n      \"Weight\": \"10\",\r\n      \"ServiceType\": \"DoorsDoors\",\r\n      \"Cost\": \"100\",\r\n      \"CargoType\": \"Cargo\",\r\n      \"SeatsAmount\": \"10\",\r\n        \"PackCalculate\": {\r\n            \"PackCount\": \"1\",\r\n            \"PackRef\": \"1499fa4a-d26e-11e1-95e4-0026b97ed48a\"\r\n        },\r\n      \"RedeliveryCalculate\": {\r\n         \"CargoType\": \"Money\",\r\n         \"Amount\": \"100\"\r\n      },\r\n      \"OptionsSeat\": [\r\n      {\r\n        \"weight\": 5,\r\n        \"volumetricWidth\": 80,\r\n        \"volumetricLength\": 25,\r\n        \"volumetricHeight\": 25\r\n      }\r\n    ]\r\n   },\r\n   \"apiKey\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.novaposhta.ua/v2.0/json/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"novaposhta",
+								"ua"
+							],
+							"path": [
+								"v2.0",
+								"json",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service Types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"modelName\": \"Common\",\r\n\"calledMethod\": \"getServiceTypes\",\r\n\"apiKey\": \"\",\r\n\"methodProperties\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.novaposhta.ua/v2.0/json/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"novaposhta",
+								"ua"
+							],
+							"path": [
+								"v2.0",
+								"json",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cargo Types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"modelName\": \"Common\",\r\n\"calledMethod\": \"getCargoTypes\",\r\n\"methodProperties\": {},\r\n\"apiKey\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.novaposhta.ua/v2.0/json/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"novaposhta",
+								"ua"
+							],
+							"path": [
+								"v2.0",
+								"json",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pack Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"modelName\": \"Common\",\r\n\"calledMethod\": \"getPackList\",\r\n\"methodProperties\": {\r\n    \"Length\": \"\",\r\n    \"Width\": \"\",\r\n    \"Height\": \"\",\r\n    \"VolumetricWeight\": \"\",\r\n    \"TypeOfPacking\": \"\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.novaposhta.ua/v2.0/json/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"novaposhta",
+								"ua"
+							],
+							"path": [
+								"v2.0",
+								"json",
+								""
+							]
+						},
+						"description": "https://devcenter.novaposhta.ua/docs/services/55702570a0fe4f0cf4fc53ed/operations/582b1069a0fe4f0298618f06"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Delivery Back Types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"modelName\": \"Common\",\r\n\"calledMethod\": \"getBackwardDeliveryCargoTypes\",\r\n\"methodProperties\": {},\r\n\"apiKey\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.novaposhta.ua/v2.0/json/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"novaposhta",
+								"ua"
+							],
+							"path": [
+								"v2.0",
+								"json",
+								""
+							]
+						},
+						"description": "https://devcenter.novaposhta.ua/docs/services/55702570a0fe4f0cf4fc53ed/operations/582b1069a0fe4f0298618f06"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Settlements",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"modelName\": \"AddressGeneral\",\r\n    \"calledMethod\": \"getSettlements\",\r\n    \"methodProperties\": {\r\n        \"FindByString\": \"Киев\"\r\n    },\r\n    \"apiKey\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.novaposhta.ua/v2.0/json/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"novaposhta",
+								"ua"
+							],
+							"path": [
+								"v2.0",
+								"json",
+								""
+							]
+						},
+						"description": "https://devcenter.novaposhta.ua/docs/services/55702570a0fe4f0cf4fc53ed/operations/582b1069a0fe4f0298618f06"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get Warehouses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"modelName\": \"AddressGeneral\",\r\n    \"calledMethod\": \"getWarehouses\",\r\n    \"methodProperties\": {\r\n      \"CityName\": \"киев\",\r\n      \"Language\": \"ru\",\r\n      \"FindByString\": \"Відділення №8\",\r\n      \"Limit\": 50\r\n    },\r\n    \"apiKey\": \"\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.novaposhta.ua/v2.0/json/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"novaposhta",
+						"ua"
+					],
+					"path": [
+						"v2.0",
+						"json",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Areas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"apiKey\": \"{{apikey}}\",\r\n\"modelName\": \"Address\",\r\n\"calledMethod\": \"getAreas\",\r\n\"methodProperties\": {}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.novaposhta.ua/v2.0/json/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"novaposhta",
+						"ua"
+					],
+					"path": [
+						"v2.0",
+						"json",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Settlements",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"modelName\": \"AddressGeneral\",\r\n    \"calledMethod\": \"getSettlements\",\r\n    \"methodProperties\": {\r\n      \r\n    \r\n    },\r\n    \"apiKey\": \"{{apikey}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.novaposhta.ua/v2.0/json/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"novaposhta",
+						"ua"
+					],
+					"path": [
+						"v2.0",
+						"json",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ctites",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"modelName\": \"Address\",\r\n  \"calledMethod\": \"getCities\",\r\n  \"methodProperties\": {\r\n    \"Ref\": \"ebc0eda9-93ec-11e3-b441-0050568002cf\"\r\n  },\r\n  \"apiKey\": \"{{apikey}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.novaposhta.ua/v2.0/json/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"novaposhta",
+						"ua"
+					],
+					"path": [
+						"v2.0",
+						"json",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3de86e5f-c648-43e0-b55b-b52d2897c290",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2ba3bc31-dfa9-457c-b089-7dadd5f50fd7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "a1ad775a-0248-4484-b5f1-f86126d746d7",
+			"key": "apikey",
+			"value": "abd728af3d9c6616fd618afabf89b862"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

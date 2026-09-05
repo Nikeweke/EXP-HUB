@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "5f7ba8c6-dfd4-440f-94df-82a3c556882f",
+		"name": "Wise API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.transferwise.com/v2/profiles",
+					"protocol": "https",
+					"host": [
+						"api",
+						"transferwise",
+						"com"
+					],
+					"path": [
+						"v2",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List balances",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.transferwise.com/v4/profiles/30872240/balances?types=STANDARD",
+					"protocol": "https",
+					"host": [
+						"api",
+						"transferwise",
+						"com"
+					],
+					"path": [
+						"v4",
+						"profiles",
+						"30872240",
+						"balances"
+					],
+					"query": [
+						{
+							"key": "types",
+							"value": "STANDARD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get balance by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.transferwise.com/v4/profiles/30872240/balances/36670337",
+					"protocol": "https",
+					"host": [
+						"api",
+						"transferwise",
+						"com"
+					],
+					"path": [
+						"v4",
+						"profiles",
+						"30872240",
+						"balances",
+						"36670337"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Addresses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.transferwise.com/v1/addresses?profile=30872240",
+					"protocol": "https",
+					"host": [
+						"api",
+						"transferwise",
+						"com"
+					],
+					"path": [
+						"v1",
+						"addresses"
+					],
+					"query": [
+						{
+							"key": "profile",
+							"value": "30872240"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.transferwise.com/v1/profiles/30872240/account-details",
+					"protocol": "https",
+					"host": [
+						"api",
+						"transferwise",
+						"com"
+					],
+					"path": [
+						"v1",
+						"profiles",
+						"30872240",
+						"account-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account statement",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.transferwise.com/v1/profiles/30872240/balance-statements/36670337/statement.json?intervalStart=2022-08-20T00:00:00.000Z&intervalEnd=2022-08-22T00:00:00.000Z&type=COMPACT",
+					"protocol": "https",
+					"host": [
+						"api",
+						"transferwise",
+						"com"
+					],
+					"path": [
+						"v1",
+						"profiles",
+						"30872240",
+						"balance-statements",
+						"36670337",
+						"statement.json"
+					],
+					"query": [
+						{
+							"key": "intervalStart",
+							"value": "2022-08-20T00:00:00.000Z"
+						},
+						{
+							"key": "intervalEnd",
+							"value": "2022-08-22T00:00:00.000Z"
+						},
+						{
+							"key": "type",
+							"value": "COMPACT"
+						},
+						{
+							"key": "currency",
+							"value": "EUR",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange rates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.transferwise.com/v1/rates?target=USD&source=UAH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"transferwise",
+						"com"
+					],
+					"path": [
+						"v1",
+						"rates"
+					],
+					"query": [
+						{
+							"key": "target",
+							"value": "USD"
+						},
+						{
+							"key": "source",
+							"value": "UAH"
+						}
+					]
+				},
+				"description": "https://api-docs.transferwise.com/#exchange-rates-list"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

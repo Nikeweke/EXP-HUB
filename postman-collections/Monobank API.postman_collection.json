@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "b912eabc-1348-4e35-8c0f-cd8824af5e1e",
+		"name": "Monobank API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get currency rates (public)",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-Token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.monobank.ua/bank/currency",
+					"protocol": "https",
+					"host": [
+						"api",
+						"monobank",
+						"ua"
+					],
+					"path": [
+						"bank",
+						"currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client-info",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "uVaYM6ZaLjTH123fbZJ6bqGxb20jvdienBpvpaznA-fQ",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-Token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.monobank.ua/personal/client-info",
+					"protocol": "https",
+					"host": [
+						"api",
+						"monobank",
+						"ua"
+					],
+					"path": [
+						"personal",
+						"client-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set webhook",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "uVaYM6ZaLjTH123fbZJ6bqGxb20jvdienBpvpaznA-fQ",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-Token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"webHookUrl\": \"https://example.com/some_random_data_for_security\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.monobank.ua/personal/webhook",
+					"protocol": "https",
+					"host": [
+						"api",
+						"monobank",
+						"ua"
+					],
+					"path": [
+						"personal",
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get statement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.monobank.ua/personal/statement/{account}/{from}/{to}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"monobank",
+						"ua"
+					],
+					"path": [
+						"personal",
+						"statement",
+						"{account}",
+						"{from}",
+						"{to}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
