@@ -1,8 +1,6 @@
 ## Zed settings
 
 ```json
-// Zed settings
-
 {
   "buffer_font_weight": 450.0,
   "autosave": {
@@ -11,9 +9,11 @@
     }
   },
   "terminal": {
-    "font_weight": 400.0,
-    "font_family": "IBM Plex Sans",
-    "font_size": 15.0
+    "dock": "right",
+    "font_size": 12.0,
+    "shell": {
+      "program": "E:\\Programms\\Git\\bin\\bash.exe"
+    }
   },
   "project_panel": {
     "dock": "left"
@@ -34,5 +34,6 @@
     "dark": "Tokyo Night Storm"
   }
 }
+
 
 ```
