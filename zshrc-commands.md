@@ -11,7 +11,7 @@ alias puller='git pull --no-rebase'
 alias pl='git pull --no-rebase'
 alias gb='git branch'
 alias gm='git checkout main && git pull'
-alias gce='git commit --allow-empty --no-verify -m "Trigger workflow"'
+alias gce='git commit --allow-empty --no-verify -m "Trigger workflow" && git push --no-verify'
 alias gpnv='git push --no-verify'
 
 gc() {
